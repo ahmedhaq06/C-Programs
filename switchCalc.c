@@ -1,33 +1,48 @@
 #include <stdio.h>
-#include <conio.h>
 
-void main(){
-    int a,b,choice;
-    
-    printf("Enter your choice: \n");
-    printf("Add (1)");
-    printf("Subtract (2)");
-    printf("Multiply (3)");
-    printf("Divide (4)");
+int main() { // It's good practice to use int main() instead of void main()
+    int a, b, choice;
 
-    scanf("%d",&choice);
-    scanf("Enter a %d",&a,"Enter b %d", &b);
-    switch(choice)
-    {
-        case 1:
-        printf("Sum of two numbers is: ", a+b);
+        printf("Enter your choice: \n");
+        printf("1. Add\n");
+        printf("2. Subtract\n");
+        printf("3. Multiply\n");
+        printf("4. Divide\n");
+        printf("Choice: ");
+                                
+        scanf("%d", &choice);
 
-        case 2:
-        printf("Subtraction of two numbers is: ", a-b);
+        printf("Enter the first number (a): ");
+        scanf("%d", &a);
 
-        case 3:
-        printf("Multiplication of two numbers is: ", a*b);
+        printf("Enter the second number (b): ");
+        scanf("%d", &b);
 
-        case 4:
-        printf("Division of two numbers is: ", a/b);
+        switch (choice) {
+            case 1:
+                printf("Sum of %d and %d is: %d\n", a, b, a + b);
+                break; 
 
-        default:
-        printf("You entered invalid value!");
+            case 2:
+                printf("Difference of %d and %d is: %d\n", a, b, a - b);
+                break; 
 
-    }
+            case 3:
+                printf("Product of %d and %d is: %d\n", a, b, a * b);
+                break; 
+
+            case 4:
+                if (b == 0) {
+                    printf("Error: Cannot divide by zero.\n");
+                } else {
+                    printf("Quotient of %d and %d is: %d\n", a, b, a / b);
+                }
+                break; 
+
+            default:
+                printf("You entered an invalid choice!\n");
+                break; 
+        }
+    return 0; 
 }
+                                                                                                                                                                                                                                                                                                
